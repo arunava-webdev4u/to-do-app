@@ -1,0 +1,53 @@
+/* .form-div {
+    height: 100px;
+} */
+.listItem, .form-input {
+    background-color: #e9e9e9;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.form-div {
+    height: 50px;
+    /* border: solid green 1px; */
+    /* padding: 0; */
+    margin: 0;
+}
+.form {
+    /* padding: 0; */
+    height: 50px;
+    margin: 0;
+}
+.form-input {
+    height: 35px;
+    width: 80%;
+    box-shadow: inset -3px -3px 8px rgb(255, 255, 255), inset 2px 2px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    padding: 10px;
+    margin: 0;
+    margin-right: 3%;
+    text-align: center;
+    overflow: hidden;
+}
+.form-submit-button {
+    font-size: 24px;
+    height: 40px;
+    width: 40px;
+    box-shadow: -5px -5px 9px rgb(255, 255, 255), 5px 5px 9px rgba(0, 0, 0, 0.3);
+	background: none;
+    color: rgb(107, 107, 107);
+    margin: 0;
+	border: none;
+    border-radius: 50px;
+	cursor: pointer;
+}
+.form-submit-button:hover {
+    color: rgb(0, 0, 0);
+}
+
+
+
+
+.body-div {
+    margin-top: 35px;
+}
