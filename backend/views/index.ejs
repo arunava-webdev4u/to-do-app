@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel="stylesheet" href="/style.css"> -->
+    <title>ToDo App</title>
+</head>
+<body>
+    <h1 class="container">ToDo App</h1>
+
+    <div id="add-task" class="container">
+        <form action="/ejs/tasks" method="POST">
+            <label for="task">Add a task: </label>
+            <input type="text" name="task" id="task">
+            <button>Add Task</button>
+        </form>
+    </div>
+
+    <div id="taskList" class="container">
+        <h3>Tasks</h3>
+        <% for (let task of tasks) { %>
+            <div class="task">
+                <%= task.name %>
+                
+                <form action="/ejs/task/<%= task.id %>/?_method=DELETE" method="POST">
+                    <button>Delete</button>
+                </form>
+                <form action="/ejs/task/edit/<%= task.id %>/?_method=PUT" method="POST">
+                    <button>Edit</button>
+                </form>
+            </div>
+        <% } %>
+    </div>
+</body>
+<!-- <script src="/script.js"></script> -->
+</html>
