@@ -22,7 +22,9 @@ router.post('/tasks', async (req, res) => {
 //! U: Update task
 router.put('/task/edit/:id', async(req, res) => {
     const { id } = req.params;
-    const task = await Task.findById(id);
+    console.log(req.body)
+    // const task = await Task.findById(id);
+    const task = await Task.findByIdAndUpdate(id, req.body);
     console.log(task);
     res.redirect('/ejs/tasks');
     // res.send(id);
