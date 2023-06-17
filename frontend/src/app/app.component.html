@@ -1,0 +1,32 @@
+<div class="todo-app">
+    <h1>To-Do List</h1>
+    <div class="todo-container">
+        <ul class="todo-list">
+            <li *ngFor="let task of tasksList">
+                <input type="checkbox" id="task1"
+                    [checked]="task.status"
+                    (click)="updateStatus(task)"
+                >
+                <div
+                    *ngIf="!editing"
+                    (click)="startEditView(task)"
+                >
+                    {{ task.name }}
+                </div>
+                <input
+                    *ngIf="editing  && editId == task._id"
+                    [(ngModel)]="editData"
+                    (blur)="stopEditView(task)"
+                    (keydown.enter)="updateName(task)"
+                    type="text" value="{{ task.name }}" autofocus
+                >
+                <button (click)="deleteTask(task._id)">Delete</button>
+                <!-- <button (click)="editView()">Edit</button> -->
+            </li>
+        </ul>
+    </div>
+    <div class="add-task-form">
+        <input [(ngModel)]="newTask" type="text" placeholder="Add a new task" class="task-input">
+        <button (click)="addTask()" type="submit" class="add-button">Add</button>
+    </div>
+</div>
